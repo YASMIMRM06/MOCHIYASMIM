@@ -1,0 +1,4 @@
+display flex box
+ propiedads: justify-content and justify-intens
+            flex-wrap and aligan-content
+            
