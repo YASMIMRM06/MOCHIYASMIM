@@ -73,10 +73,9 @@ header {
 #homehistory {
     text-size-adjust:auto;
     text-align: justify;
-    padding: 0px 200px ;
+    padding: 0px 100px ;
     text-shadow: #333;
 }
-
 #footerr{
     padding: 10px;
 }
