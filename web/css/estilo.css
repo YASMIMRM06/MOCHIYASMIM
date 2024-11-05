@@ -1,16 +1,3 @@
-#logo{
-    width: 75px;
-    height: 75px;
-}
-#cabecalho {
-    width: 100%;
-    height: 250px;
-    background-color: rgb(206, 207, 243);
-    display: flex;
-    justify-content: center;
-    align-items:center;
-
-}
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +8,22 @@ body {
     font-family: 'Times New Roman', serif;
     background-color: #f0f0f0;
     color: #333;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
 }
 
 header {
+    grid-area: header;
     width: 100%;
 }
 
 #cabecalho {
+    width: 100%;
     height: 250px;
     background-color: rgb(206, 207, 243);
     display: flex;
@@ -35,138 +31,81 @@ header {
     align-items: center;
 }
 
-
-#social{
-    border-radius: 50%;
-    width: 50px; /* Ajuste para o tamanho desejado */
-    height: 50px; /* Ajuste para o tamanho desejado */
-    object-fit: cover; /* Ajuste para manter a proporção */
-    margin-bottom: 3px;
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+    padding: 20px;
 }
-#chocolate{
-    width: 400px;
-    height: 400px;
-    display: flex;
-        
-    }
+
 #menu {
     display: flex;
     justify-content: space-around;
     background-color: rgb(230, 230, 250);
     padding: 10px;
-    text-decoration-style: none;
-}
-
-#menu p {
-    margin: 0 15px;
-    cursor: pointer; /* Para indicar que é clicável, se necessário */
 }
 
 #home {
     margin: 20px;
     max-width: 900px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    display: flex;
-  
-}
-#homehistory {
-    text-size-adjust:auto;
-    text-align: justify;
-    padding: 0px 100px ;
-    text-shadow: #333;
-}
-#footerr{
-    padding: 10px;
-}
-.redes-sociais {
-    text-align: center;
-    margin: 20px 0;
 }
 
-.social {
-    width: 40px;
-    margin: 0 10px;
+#homehistory {
+    text-align: justify;
+    padding: 0 100px;
+}
+
+.container {
+    width: 60%;
+    margin: 2rem auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 1.5rem;
 }
 
 footer {
+    grid-area: footer;
     text-align: center;
     padding: 15px;
     background-color: #333;
     color: #fff;
 }
- 
-main {
-display: flex;
-justify-content: space-around;
-padding: 300px;
-}
- 
-#cheesecake {
-    border-radius: 50%;
-    width: 200px; /* Ajuste para o tamanho desejado */
-    height: 200px; /* Ajuste para o tamanho desejado */
-    object-fit: cover; /* Ajuste para manter a proporção */
-    margin-bottom: 20px;
+
+/* Gallery items */
+.gallery__item--1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
 }
 
-.container {
-    width: 60%;
-    margin: 2rem auto; 
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 1.5rem; 
-  }
-  
-  .gallery__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
-  }
-  
-  .gallery__item--1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-  
-  .gallery__item--2 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-  
-  .gallery__item--3 {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 1;
-    grid-row-end: 6;
-  }
-  
-  .gallery__item--4 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 6;
-  }
-  
-  .gallery__item--5 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 6;
-    grid-row-end: 9;
-  }
-  
-  .gallery__item--6 {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 6;
-    grid-row-end: 9;
-  }
+.gallery__item--2 {
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+}
+
+.gallery__item--3 {
+    grid-column: 5 / 9;
+    grid-row: 1 / 6;
+}
+
+.gallery__item--4 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 6;
+}
+
+.gallery__item--5 {
+    grid-column: 1 / 5;
+    grid-row: 6 / 9;
+}
+
+.gallery__item--6 {
+    grid-column: 5 / 9;
+    grid-row: 6 / 9;
+}
